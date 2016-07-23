@@ -91,3 +91,21 @@ footer {
         height: 70%;
     }
 }
+
+/* Locol */
+
+html {
+  --purple = #55346b;
+  --light-gray = #6e6c6a;
+  --dark-gray = #373533;
+}
+
+.navbar-header .navbar-brand {
+  padding-top: 10px;
+}
+
+.locol-icon-bar {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-top: 20px;
+}

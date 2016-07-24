@@ -45,7 +45,6 @@ function init(){
 function onFormSubmit(event) {
   event.preventDefault();
   var $searchTerm = $('.locol-search-term').val();
-  debugger
 }
 
 function filterByPrice(upper, lower){

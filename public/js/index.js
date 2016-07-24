@@ -20,10 +20,7 @@ function injectImage(url, imgElem){
 	});
 }
 
-function init(){
-	database.ref('trips/').on('child_added', function(snapshot) {
-		var trip = snapshot.val();
-		var id = snapshot.key;
+function addTripCard(trip, id){
 		var link = '/listing.html?'+id;
 		var card = $('<div class="col-md-6 img-portfolio">\
  				<a class="locol-link" href="'+link+'">\
@@ -38,14 +35,24 @@ function init(){
 
 		injectImage(trip.cover_photo, card.find('img'));
 		$('.locol-trips').append(card);
-		
+	
+}
+
+function init(){
+	database.ref('trips/').on('child_added', function(snapshot) {
+		var trip = snapshot.val();
+		var id = snapshot.key;
+		addTripCard(trip, id);
 	});	
 }
 
 function filterByPrice(upper, lower){
+	$('.locol-trips').empty();
 	var priceFilterRef = firebase.database().ref('trips').orderByChild('price').endAt(upper).startAt(lower);
 	priceFilterRef.on('child_added', function(snapshot) {
-
+		var trip = snapshot.val();
+		var id = snapshot.key;
+		addTripCard(trip, id);
 	});
 }
 

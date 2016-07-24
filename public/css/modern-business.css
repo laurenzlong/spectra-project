@@ -158,8 +158,14 @@ html {
 }
 
 #locol-snapshot {
-    list-style-type: none;
+    list-style: none;
+    max-width: 80%;
+}
+
+#locol-snapshot li{
     display: inline-block;
+    padding-right: 20px;
+
 }
 
 #locol-snapshot img{

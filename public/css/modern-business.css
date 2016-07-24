@@ -92,7 +92,7 @@ footer {
     }
 }
 
-/* Locol */
+/* Locol Trip Page*/
 
 html {
   --purple = #55346b;
@@ -117,7 +117,7 @@ html {
 
 .locol-user-icon-img {
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid #6e6c6a;
   height: 30px;
 }
 
@@ -171,4 +171,11 @@ html {
 #locol-snapshot img{
     max-width: 200px;
     max-height: 200px;
+}
+
+
+/*Locol Search Page*/
+
+.locol-trips {
+  margin-top: 35px;
 }

@@ -137,3 +137,13 @@ html {
   width: 150px;
   text-align: center;
 }
+
+#locol-snapshot {
+    list-style-type: none;
+    display: inline-block;
+}
+
+#locol-snapshot img{
+    max-width: 200px; 
+    max-height: 200px;
+}

@@ -35,7 +35,6 @@ function addTripCard(trip, id){
 
 		injectImage(trip.cover_photo, card.find('img'));
 		$('.locol-trips').append(card);
-	
 }
 
 function init(){
@@ -44,16 +43,37 @@ function init(){
 		var id = snapshot.key;
 		addTripCard(trip, id);
 	});	
+	$('#search-form').on('submit', onFormSubmit);
+}
+
+function onFormSubmit(event) {
+  event.preventDefault();
+  var searchTerm = $('.locol-search-term').val();
+  //filterBySearch($searchTerm)
+
+  filterByPrice(searchTerm, 0);
 }
 
 function filterByPrice(upper, lower){
+	database.ref('trips/').off();
 	$('.locol-trips').empty();
+
 	var priceFilterRef = firebase.database().ref('trips').orderByChild('price').endAt(upper).startAt(lower);
 	priceFilterRef.on('child_added', function(snapshot) {
 		var trip = snapshot.val();
 		var id = snapshot.key;
 		addTripCard(trip, id);
 	});
+}
+
+function filterBySearch(term) {
+	$('.locol-trips').empty();
+	// var priceFilterRef = firebase.database().ref('trips').orderByChild('location').equalTo(searchTerm);
+	// priceFilterRef.on('child_added', function(snapshot) {
+	// 	var trip = snapshot.val();
+	// 	var id = snapshot.key;
+	// 	addTripCard(trip, id);
+	// });
 }
 
 $(init());

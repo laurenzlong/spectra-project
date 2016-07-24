@@ -12,8 +12,6 @@ var storage = firebase.storage();
 function injectImage(url, imgElem){
 	var gsReference = storage.refFromURL(url);
 	gsReference.getDownloadURL().then(function(url) {
-		console.log('got url: ', url)
-		console.log(imgElem.attr('src'))
 		imgElem.attr('src', url);
 	}).catch(function(error) {
 	  console.log('error downloading image', error);
@@ -51,18 +49,22 @@ function onFormSubmit(event) {
   var searchTerm = $('.locol-search-term').val();
   //filterBySearch($searchTerm)
 
-  filterByPrice(searchTerm, 0);
+  filterByPrice(0, Number(searchTerm));
 }
 
-function filterByPrice(upper, lower){
-	database.ref('trips/').off();
+function filterByPrice(lower, upper){
+	//database.ref('trips/').off('child_added');
 	$('.locol-trips').empty();
+	console.log(lower, upper)
 
-	var priceFilterRef = firebase.database().ref('trips').orderByChild('price').endAt(upper).startAt(lower);
-	priceFilterRef.on('child_added', function(snapshot) {
+	//var priceFilterRef = firebase.database().ref('trips').orderByChild('price');
+	database.ref('trips/').on('child_added', function(snapshot) {
+		console.log('snapshot.val()', snapshot.val())
 		var trip = snapshot.val();
-		var id = snapshot.key;
-		addTripCard(trip, id);
+		if (trip.price < upper && trip.price > lower){
+			var id = snapshot.key;
+			addTripCard(trip, id);
+		}
 	});
 }
 

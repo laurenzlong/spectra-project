@@ -35,16 +35,14 @@ function init(){
     var id = snapshot.key;
 		card.attr('id', snapshot.key);
 		$('.locol-trips').append(card);
-
 	});
-  debugger
 	$('#search-form').on('submit', onFormSubmit);
 }
 
 function onFormSubmit(event) {
-	debugger
-  alert( "Handler for .submit() called." );
   event.preventDefault();
+  var $searchTerm = $('.locol-search-term').val();
+  debugger
 }
 
 function filterByPrice(upper, lower){

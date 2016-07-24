@@ -47,17 +47,20 @@ function init(){
 function onFormSubmit(event) {
   event.preventDefault();
   var searchTerm = $('.locol-search-term').val();
-  //filterBySearch($searchTerm)
+  filterBySearch(searchTerm)
 
-  filterByPrice(0, Number(searchTerm));
+  if (parseInt(searchTerm)){
+	filterByPrice(0, Number(searchTerm));
+	console.log('fitler by price')
+  } else {
+  	filterBySearch(searchTerm);
+  	console.log('filter by term')
+  }
 }
 
 function filterByPrice(lower, upper){
-	//database.ref('trips/').off('child_added');
 	$('.locol-trips').empty();
 	console.log(lower, upper)
-
-	//var priceFilterRef = firebase.database().ref('trips').orderByChild('price');
 	database.ref('trips/').on('child_added', function(snapshot) {
 		console.log('snapshot.val()', snapshot.val())
 		var trip = snapshot.val();
@@ -70,12 +73,16 @@ function filterByPrice(lower, upper){
 
 function filterBySearch(term) {
 	$('.locol-trips').empty();
-	// var priceFilterRef = firebase.database().ref('trips').orderByChild('location').equalTo(searchTerm);
-	// priceFilterRef.on('child_added', function(snapshot) {
-	// 	var trip = snapshot.val();
-	// 	var id = snapshot.key;
-	// 	addTripCard(trip, id);
-	// });
+	database.ref('trips/').on('child_added', function(snapshot) {
+		console.log('snapshot.val()', snapshot.val())
+		var trip = snapshot.val();
+		var reg = new RegExp(term, 'i');
+		if (reg.test(trip.location)){
+			var id = snapshot.key;
+			addTripCard(trip, id);
+		}
+	});
+
 }
 
 $(init());

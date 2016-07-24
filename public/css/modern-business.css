@@ -159,12 +159,12 @@ html {
 
 #locol-snapshot {
     list-style: none;
-    max-width: 80%;
+    max-width: 90%;
 }
 
 #locol-snapshot li{
     display: inline-block;
-    padding-right: 20px;
+    padding: 20px;
 
 }
 

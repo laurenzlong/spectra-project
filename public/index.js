@@ -21,8 +21,15 @@ function injectImage(url, imgElem){
 function init(){
 	firebase.database().ref('trips/' + tripId).on('child_added', function(snapshot) {
 		var trip = snapshot.val();
-		
-	});	
+	});
+	debugger
+	$('#search-form').on('submit', onFormSubmit);
+}
+
+function onFormSubmit(event) {
+	debugger
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
 }
 
 function filterByPrice(upper, lower){

@@ -77,7 +77,7 @@ function filterBySearch(term) {
 		console.log('snapshot.val()', snapshot.val())
 		var trip = snapshot.val();
 		var reg = new RegExp(term, 'i');
-		if (reg.test(trip.location) || reg.test(trip.title)){
+		if (reg.test(trip.location) || reg.test(trip.title) || reg.test(trip.description)){
 			var id = snapshot.key;
 			addTripCard(trip, id);
 		}

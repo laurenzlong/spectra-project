@@ -42,7 +42,7 @@ database.ref('trips/' + tripId).on('value', function(snapshot) {
 	    if (TEXT_KEYS.indexOf(key) >= 0) {
 	    	if (key === 'price') {
 	    		$('.locol-'+key).text('$ ' + value);
-	    	} else {
+	    	}else {
 		    	$('.locol-'+key).text(value);
 	    	}
 	    }
@@ -50,6 +50,7 @@ database.ref('trips/' + tripId).on('value', function(snapshot) {
 	injectImage(obj.cover_photo, $('.locol-cover_photo'));
 	injectHostInfo(obj.host_id);
 	injectItinerary(obj.itinerary);
+	$('.locol-video_link').attr('src', obj.video_link);
 });
 
 

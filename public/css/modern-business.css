@@ -110,7 +110,7 @@ html {
   margin-top: 20px;
 }
 
-.navbar-nav>li>a.locol-user-icon {
+.navbar-nav>li>a.locol-header-link {
   padding-top: 10px;
   padding-bottom: 10px;
 }

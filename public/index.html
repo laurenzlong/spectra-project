@@ -19,7 +19,9 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -87,13 +89,13 @@
         <!-- Projects Row -->
         <div class="row locol-trips">
             <div class="col-md-6 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover locol-cover_photo" src="http://placehold.it/700x400" alt="">
+                <a class="locol-link">
+                    <img class="img-responsive img-hover locol-cover_photo">
                 </a>
                 <h3>
-                    <a href="portfolio-item.html">Project One</a>
+                    <a class="locol-link locol-title"></a>
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                <p class='locol-description'></p>
             </div>
             <div class="col-md-6 img-portfolio">
                 <a href="portfolio-item.html">
@@ -198,12 +200,7 @@
 
     </div>
     <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 

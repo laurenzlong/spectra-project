@@ -137,3 +137,38 @@ html {
   width: 150px;
   text-align: center;
 }
+
+.locol-review {
+  overflow: auto;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.locol-review-pic {
+  border-radius: 50%;
+  border: 1px solid darkGrey;
+  height: 75px;
+}
+
+.locol-review-name {
+  width: 75px;
+  text-align: center;
+}
+
+#locol-snapshot {
+    list-style: none;
+    max-width: 80%;
+}
+
+#locol-snapshot li{
+    display: inline-block;
+    padding-right: 20px;
+
+}
+
+#locol-snapshot img{
+    max-width: 200px;
+    max-height: 200px;
+}

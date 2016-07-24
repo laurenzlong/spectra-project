@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>Modern Business - Start Bootstrap Template</title>
+    <script type="text/javascript" src="js/reviews_module.js"></script>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -117,12 +118,6 @@
                         <div class="item active">
                             <img class="img-responsive locol-cover_photo" src="http://placehold.it/750x500" alt="">
                         </div>
-                        <div class="item">
-                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
-                        </div>
                     </div>
 
                     <!-- Controls -->
@@ -178,24 +173,28 @@
         <div class="row">
           <h3>Reviews</h3>
           <div class="locol-review">
-            <div class="col-md-3">
+            <div class="col-md-2">
               <img src="imgs/reviewer-2.jpg" class="locol-review-pic">
               <div class="locol-review-name">Sue Ray</div>
             </div>
-            <div class="col-md-9">
-              <div class="locol-review-comment">Lauren is such a fantastic host!! She's very knowledgeable and friendly</div>
+            <div class="col-md-10">
+              <div class="locol-review-comment">Lauren is such a fantastic host!! She's very knowledgeable and friendly.</div>
+            </div>
+          </div>
+          <div class="locol-review">
+            <div class="col-md-2">
+              <img src="imgs/reviewer-3.jpg" class="locol-review-pic">
+              <div class="locol-review-name">Prima</div>
+            </div>
+            <div class="col-md-10">
+              <div class="locol-review-comment">I was a little scared at first, but scuba diving is such a good time!</div>
             </div>
           </div>
         </div>
 
         <div class="row">
           <h3>Loco-Snaps</h3>
-          <ul class="locol-snapshot">
-            <li>Snapshot 1
-              <video width="320" height="240" controls>
-                <source src="movie.mp4" type="video/mp4">
-              </video>
-            </li>
+          <ul id="locol-snapshot">
           </ul>
         </div>
 
@@ -213,8 +212,8 @@
     </div>
     <!-- /.container -->
 
-    
-    
+
+
     <script src="js/trip.js"></script>
 
 </body>

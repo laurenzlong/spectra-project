@@ -34,7 +34,7 @@ function load_tweets(e){
             console.log(messages[tweets[i+count]].subresource_uris.media);
             request2(twilio_api_base + messages[tweets[i+count]].subresource_uris.media);
 		}
-        var ul = document.getElementById('reviews'); 
+        var ul = document.getElementById('locol-snapshot'); 
 		var liList = ul.getElementsByTagName('li'); 
 		for (var j = liList.length-1; j > 25;j--){
 			liList[j].style.display = 'none';
@@ -61,16 +61,16 @@ function request2(theURL) {
         console.log(parsed_content);
         var image_list = parsed_content["media_list"];
         var image = image_list[0].uri;
-        console.log(image);
-        var ul = document.getElementById('reviews'); 
-        var li = document.createElement('li');  
-        var post = '<div id=twe>';
-        post += '<img id=picture src="' + "http://" + twilio_api_base_non_secure +  image.substring(0, image.length - 5) + '" />'
-        post += '</div>';  
-        li.innerHTML = post; 
-        var x = ul.getElementsByTagName('li')[0];
-        ul.insertBefore(li, x);
-        console.log("end");
+        if (image_list[0].content_type == "image/jpeg") {
+            var ul = document.getElementById('locol-snapshot'); 
+            var li = document.createElement('li');  
+            var post = '<div id=twe>';
+            post += '<img id=picture src="' + "http://" + twilio_api_base_non_secure +  image.substring(0, image.length - 5) + '" />'
+            post += '</div>';  
+            li.innerHTML = post; 
+            var x = ul.getElementsByTagName('li')[0];
+            ul.insertBefore(li, x);
+        }
 
     }}, false); 
 
@@ -98,5 +98,6 @@ window.addEventListener('load', function(){
     interval = window.setInterval(function() {request(request_for_data, the_url, load_tweets)}, 1000);
 
 }, false);
+
 
 // Add more supporting code here!

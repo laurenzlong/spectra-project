@@ -109,3 +109,31 @@ html {
   border-bottom: 1px solid #eee;
   margin-top: 20px;
 }
+
+.navbar-nav>li>a.locol-user-icon {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.locol-user-icon-img {
+  border-radius: 50%;
+  border: 1px solid white;
+  height: 30px;
+}
+
+.locol-icon-bar {
+  padding: 20px;
+}
+
+.locol-host-profile_pic {
+  border-radius: 50%;
+  border: 1px solid darkGrey;
+  height: 150px;
+  width: 150px;
+}
+
+.locol-host-name {
+  margin-top: 10px;
+  width: 150px;
+  text-align: center;
+}
